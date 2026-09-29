@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>跳转中…</title>
+<script>
+  // GitHub Pages SPA 兜底：未知路径先存起来，跳回站点根路径，由 main.tsx 恢复路由
+  sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash);
+  var seg = location.pathname.split('/')[1] || '';
+  location.replace(seg ? '/' + seg + '/' : '/');
+</script>
+</head>
+<body></body>
+</html>
